@@ -14,7 +14,7 @@ export const SOCIAL_LINKS = {
   behance: 'https://www.behance.net/seu-usuario'
 };
 
-export const HERO_VIDEO_URL = 'https://assets.mixkit.co/videos/preview/mixkit-abstract-video-of-a-dark-wavy-grid-690-large.mp4';
+export const HERO_VIDEO_URL = 'https://vimeo.com/1072009194?fl=pl&fe=vl';
 
 export const SKILLS: Skill[] = [
   { name: 'Photoshop', level: 95 },
