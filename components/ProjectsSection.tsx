@@ -61,7 +61,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ id }) => {
   return (
     <Section id={id} title="Meus Projetos">
       {renderContent()}
-    </section>
+    </Section>
   );
 };
 
