@@ -5,26 +5,22 @@ import { GradientBackground } from 'react-gradient-animation';
 import BackgroundNoise from 'react-background-noise';
 import { USER_INFO } from '../constants';
 
-// NOTA: Eu adicionei @ts-ignore nos imports das libs de background
-// porque elas podem não ter os "types" (arquivos @types/) 
-// e o TypeScript iria falhar o build. Isso força ele a aceitar.
-
 interface HeroSectionProps {
   id: string;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
-  // Removi o 'useState' e a lógica do modal, já que não temos mais vídeo.
 
   return (
     <>
       <section 
         id={id} 
         className="relative flex items-center justify-center min-h-screen py-20 md:py-0 overflow-hidden"
-        // Adicionei 'relative' e 'overflow-hidden' 
-        // para o gradiente animado funcionar como fundo.
       >
         {/* Camada 1: O Gradiente Animado (Fundo) */}
+        
+        {/* Hack: Ignora o TS aqui porque a lib não tem types */}
+        {/* @ts-ignore */}
         <GradientBackground
           style={{
             position: 'absolute',
@@ -35,12 +31,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             zIndex: 1, // Fica atrás de tudo
           }}
           gradient={['#1a0b0a', '#3f1310', '#1f2937', '#030712']}
-          // Cores: Um vermelho bem escuro, um vermelho (da sua paleta), e os cinzas do seu site.
           angle={120}
           density={0.03}
         />
 
         {/* Camada 2: O Ruído (Textura) */}
+        
+        {/* Hack: Ignora o TS aqui porque a lib não tem types */}
+        {/* @ts-ignore */}
         <BackgroundNoise
           style={{
             position: 'absolute',
@@ -51,14 +49,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
             zIndex: 2, // Fica em cima do gradiente
             opacity: 0.03, // Bem sutil
           }}
-          // @ts-ignore
           brightness={0.7}
           size={512}
         />
 
         {/* Camada 3: O Conteúdo (Seu texto e botões) */}
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          {/* Adicionei 'relative' e 'z-10' para garantir que o conteúdo fique na frente */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             
             {/* Left Column: Text Content */}
@@ -88,12 +84,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ id }) => {
               </div>
             </div>
 
-            {/* Right Column: AGORA É SÓ O TEXTO (removi o vídeo) */}
+            {/* Right Column: VAZIA */}
             <div 
               className="relative aspect-video"
-              // A gente pode usar esse espaço pra outra coisa (uma imagem?)
-              // Por enquanto, deixei o grid 1/2 pra manter o layout.
-              // Mas a coluna da direita está "vazia".
             >
               {/* Espaço do vídeo ficou livre. */}
             </div>
