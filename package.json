@@ -1,0 +1,8 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "A modern personal portfolio.",
+  "dependencies": {
+    "isomorphic-fetch": "3.0.0"
+  }
+}
